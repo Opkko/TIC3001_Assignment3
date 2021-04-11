@@ -11,13 +11,8 @@ class Output:
         self.__getresult()
 
     def __getresult(self):
-        print ("result")
-        print (self.__result)
-        print (self.__filename)
         with open(filePath, "a+") as file:
             file.write(self.__filename + "\n")
             for line in self.__result:
-                # print ("test")
-                # print (line)
                 file.write("{line}\n".format(line=line))
             file.close()

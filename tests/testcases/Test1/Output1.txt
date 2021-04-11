@@ -1,10 +1,6 @@
 CourseTitles.txt
-science science
-science science
-science science
-science science
+Computer science
+science Computer
+Science Life
 MovieTitles.txt
-science Science
-Science science
-science science
-science science
+Computer chess

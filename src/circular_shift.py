@@ -46,19 +46,9 @@ class CircularShift:
 
     def __lstsplitting(self, lst, filename):
         tmplst = []
-        print("what is lst in split")
-        print(lst)
-        print(filename)
         for i in range(len(lst)):
-            print (i) #len = 4
-            print("what is i in if ")
-            print(lst[i])
             if filename == lst[i]:
-                print("before append tmplst")
-                print(tmplst)
                 tmplst += lst[i+1]
-                print("tmpLst is")
-                print(tmplst)
                 break
         return tmplst
     
