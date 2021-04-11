@@ -1,2 +1,3 @@
-science science
-science science
+Chinese
+Life Science
+Computer Science

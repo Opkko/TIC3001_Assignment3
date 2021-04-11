@@ -4,12 +4,11 @@ from alphabetical_sort import AlphabetSort
 class CircularShift:
     lst = []
     tmp = []
-    y = []
+    shifted = []
     def __init__(self, listOfFiles, keyWordList):
         self.__listOfFiles = listOfFiles
         self.__keyWordList = keyWordList
         self.__shifted = []
-        self.__lst = [] #---- this new lst
         self.__getshifted()
 
     def __getshifted(self):
@@ -26,23 +25,26 @@ class CircularShift:
                                 self.deq.rotate()
                                 self.__shifted.append(list(self.deq))
                     self.__callalphabetsort(self.filename, self.__shifted)
-                    
-                    CircularShift.lst.append(self.filename)
-                    CircularShift.y = self.__shifted[:]
-
-                    CircularShift.lst.append(self.__shifted[:])
-                    self.__shifted.clear() #--- this is for each file
-                    CircularShift.y.clear()
+                    self.__storekwicindex()
                  
                 except IOError:
                     print("File not accessible")
            
         else:
             for self.filename in self.__listOfFiles:
-                CircularShift.tmp = self.lst_splitting(CircularShift.lst, self.filename)
+                CircularShift.tmp = self.__lstsplitting(CircularShift.lst, self.filename)
                 self.__callalphabetsort(self.filename, CircularShift.tmp)
-                    
-    def lst_splitting(self, lst, filename):
+
+    def __storekwicindex(self):
+        CircularShift.lst.append(self.filename)
+        CircularShift.shifted = self.__shifted[:]
+
+        CircularShift.lst.append(self.__shifted[:])
+        self.__shifted.clear() #--- this is for each file
+        CircularShift.shifted.clear()
+
+
+    def __lstsplitting(self, lst, filename):
         tmplst = []
         print("what is lst in split")
         print(lst)

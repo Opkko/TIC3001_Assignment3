@@ -19,11 +19,11 @@ def main():
               file.close()
             break
         if len(keyWord.split(" ")) == 1 :
-          if len(keyWordList) > 1 and keyWordList[len(keyWordList) - 1] != keyWordList[len(keyWordList) - 2]:
+          if len(keyWordList) > 1 and keyWordList[len(keyWordList) - 1] not in keyWordList:
             keyWordList.append(keyWord)
           if len(keyWordList) == 0 or len(keyWordList) == 1:
             keyWordList.append(keyWord)
-          if len(keyWordList) > 1 and keyWordList[len(keyWordList) - 1] == keyWordList[len(keyWordList) - 2]:
+          if len(keyWordList) > 1 and keyWordList[len(keyWordList) - 1] in keyWordList:
             print("Please key in different User Input")
             continue
           if len(keyWordList) > 1:
