@@ -12,6 +12,7 @@ class CircularShift:
         self.__getshifted()
 
     def __getshifted(self):
+        print("came circular")
         if len(self.__keyWordList) == 1:
             for self.filename in self.__listOfFiles:
                 try:
